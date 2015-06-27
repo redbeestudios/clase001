@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-12 col-md-offset-2 col-md-8">
+    <form class="form-inline">
+      <div class="form-group">
+        <label>To do</label>
+        <input type="text" class="form-control" ng-model="newTodo">
+      </div>
+
+      <button type="submit" class="btn btn-default" ng-click="addToDo(newTodo)">
+        <i class="glyphicon glyphicon-plus"></i></button>
+    </form>
+
+    <div class="todo-list todo-list-incomplete col-xs-6">
+        <ul class="list-group ">
+          <li class="todo row list-group-item" ng-repeat="todo in todoList | filter: {done : false} " >
+            <p class="text col-xs-10 task"> <span>{{$index}}</span> {{todo.task}}</p>
+            <button class="btn btn-primary col-xs-1 btn-xs" ng-click="completeTodo(todo)">
+              <i class="glyphicon glyphicon-chevron-right"></i></button>
+            <button class="btn btn-danger col-xs-1 btn-xs" ng-click="deleteTodo(todo)">
+              <i class="glyphicon glyphicon-remove"></i></button>
+          </li>
+        </ul>
+      </div>
+
+    <div class="todo-list todo-list-complete col-xs-6">
+      <ul class="list-group ">
+        <li class="todo row list-group-item" ng-repeat="todo in todoList | filter: {done: true}" >
+          <p class="text col-xs-10 task"> <span>{{$index}}</span> {{todo.task}}</p>
+          <button class="btn btn-primary col-xs-1 btn-xs" ng-click="volverTodo(todo)">
+            <i class="glyphicon glyphicon-chevron-left"></i></button>
+          <button class="btn btn-danger col-xs-1 btn-xs" ng-click="deleteTodo(todo)">
+            <i class="glyphicon glyphicon-remove"></i></button>
+        </li>
+      </ul>
+    </div>
+
+
+
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+<div>
+  <input type="text" ng-model=""/><a href="#" class="btn">+</a>
+
+  <div>
+    <div ng-repeat="elemento in lista">
+      <p>{{elemento}}</p>
+      <input type="checkbox"/>
+      <a href="#" ng-click="eliminar(elemento)"></a>
+    </div>
+  </div>
+</div>
